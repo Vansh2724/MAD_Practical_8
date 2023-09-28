@@ -3,7 +3,8 @@
     <style name="Base.Theme.Mad_prac_89_5b6" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="android:background">#EAEFEA</item>
+        <item name="android:background">@color/white</item>
+        <item name="cardBackgroundColor">#edfced</item>
     </style>
 
     <style name="Theme.Mad_prac_89_5b6" parent="Base.Theme.Mad_prac_89_5b6" />
