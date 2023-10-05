@@ -111,7 +111,7 @@
                         android:textSize="16sp"
                         app:iconSize="20dp"
                         android:backgroundTint="#388E3C"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="15dp"
                         android:layout_marginStart="12dp"
                         android:layout_marginBottom="12dp"
                         android:padding="12dp"
