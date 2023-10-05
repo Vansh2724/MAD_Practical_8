@@ -4,10 +4,10 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 import android.app.TimePickerDialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import com.example.mad_prac_89_5b6.databinding.ActivityMainBinding
 import java.text.SimpleDateFormat
@@ -22,13 +22,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val c = Calendar.getInstance()
+        val df = SimpleDateFormat("hh:mm:ss   MMM-dd yyyy ")
+        binding.textAlarmTime.text = df.format(c.time)
         binding.cardAlarmcreate2.visibility = View.GONE
         binding.btncreatealarm.setOnClickListener() {
             showTimerDialog()
         }
         binding.btnCancleAlaram.setOnClickListener{
             setAlarm(-1,"Stop")
-            binding.cardAlarmcreate1.visibility = View.GONE
+            binding.cardAlarmcreate2.visibility = View.GONE
         }
     }
 
@@ -51,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         val month: Int = alarmCalendar.get(Calendar.MONTH)
         val day: Int = alarmCalendar.get(Calendar.DATE)
         alarmCalendar.set(year, month, day, hour, minute, 0)
-        binding.textAlarmTime.text =  SimpleDateFormat("hh:mm:ss a ", Locale.getDefault()).format(alarmCalendar.time) + "$month,$day $year"
+        binding.txtAlarmsetcontent.text =  SimpleDateFormat("hh:mm:ss a ", Locale.getDefault()).format(alarmCalendar.time) + "$day/$month/$year"
         binding.cardAlarmcreate2.visibility = View.VISIBLE
         setAlarm(alarmCalendar.timeInMillis, "Start")
     }
